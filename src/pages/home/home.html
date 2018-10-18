@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list *ngIf="testServicedata">
+    <ion-card *ngFor="let station of testServicedata">
+   <img src={{station.urlToImage}}/>
+   <ion-card-content>
+     <ion-card-title>
+      <h1>{{station.title}}</h1>
+       </ion-card-title>
+    <h2>{{station.author}}</h2><!-- access the station name-->
+    <p>{{station.description}}</p>
+   </ion-card-content>
+ </ion-card>
+</ion-list>
+</ion-content>
